@@ -1,2 +1,2 @@
 # tz_collector
-Python based crawler collections
+Python code snippet.

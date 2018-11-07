@@ -16,7 +16,7 @@ class Infomation(object):
         self.city = data['weatherinfo']['city']
         self.temperature = data['weatherinfo']['temp']
         self.humidity = data['weatherinfo']['SD']
-        return "³ÇÊÐ: %s, ÎÂ¶È: %s, Êª¶È: %s" % (self.city, self.temperature, self.humidity)
+        return "åŸŽå¸‚: %s, æ¸©åº¦: %s, æ¹¿åº¦: %s" % (self.city, self.temperature, self.humidity)
 
 
     def getOutIP(self):

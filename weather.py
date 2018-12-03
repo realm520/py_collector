@@ -2,6 +2,7 @@
 import requests
 import json
 import itchat
+import psutil
 from itchat.content import *
 
 
@@ -25,6 +26,15 @@ class Infomation(object):
         jdata = json.loads(data[:-1])
         self.outIp = jdata['cip']
         return self.outIp
+    
+    def getNIC(self):
+        netcard_info = []
+        info = psutil.net_if_addrs()
+        for k, v in info.items():
+            for item in v:
+                if item[0] == 2 and not item[1] == '127.0.0.1':
+                    netcard_info.append((k, item[1]))
+        return netcard_info
 
 
 @itchat.msg_register([TEXT, MAP, CARD, NOTE, SHARING])

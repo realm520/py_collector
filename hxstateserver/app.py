@@ -11,9 +11,9 @@ jsonrpc = JSONRPC(app, '/api')
 def hello_world():
     return 'Hello World!'
 
-@jsonrpc.method('App.index')
-def index():
-    return u'Welcome to Flask JSON-RPC'
+@jsonrpc.method('hx.asset.summary')
+def assetSummary():
+    return [{'name': 'HX', 'amount': 100, 'status': 'normal'}, {'name': 'HC', 'amount': 1000, 'status': 'normal'}, {'name': 'BTC', 'amount': 10000, 'status': 'normal'}]
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

@@ -11,13 +11,13 @@ def http_request(method, args):
             'content-type': "text/plain",
             'cache-control': "no-cache",
     }
-    try:
-        response = requests.request("POST", url, data=payload, headers=headers)
+    # try:
+    response = requests.request("POST", url, data=payload, headers=headers)
         #print type(response)
         #print response.text
-        rep = response.json()
-        if "result" in rep:
-            return rep["result"]
-    except:
-        return None
+    rep = response.json()
+    if "result" in rep:
+        return rep["result"]
+    # except:
+    #     return None
 
